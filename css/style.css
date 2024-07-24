@@ -1,0 +1,16 @@
+#griglia {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    gap: 5px;
+    margin: 150px auto;
+    width: max-content;
+}
+
+.cella {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border: 1px solid #ccc;
+}
