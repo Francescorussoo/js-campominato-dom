@@ -31,3 +31,21 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         grid.appendChild(cell);
     }
+    function generateBombs(count, max) {
+        const bombs = [];
+        while (bombs.length < count) {
+            const bomb = Math.floor(Math.random() * max) + 1;
+            if (!bombs.includes(bomb)) {
+                bombs.push(bomb);
+            }
+        }
+        return bombs;
+    }
+
+    function endGame(won, score) {
+        const message = won ? `Hai vinto! Punteggio: ${score}` : `Hai perso! Punteggio: ${score}`;
+        alert(message);
+        document.querySelectorAll('.cella').forEach(cell => cell.style.pointerEvents = 'none');
+        console.log('Partita terminata. Punteggio finale:', score); // Log del punteggio finale
+    }
+});
